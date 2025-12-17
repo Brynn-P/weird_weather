@@ -2,6 +2,8 @@ import requests
 import openmeteo_requests
 from openmeteo_sdk.Variable import Variable
 
+"""def get_local_news(city_name): """
+
 def geocode_city(city_name):
     """
     Given a city name string, use Open-Meteo's geocoding API

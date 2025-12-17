@@ -416,3 +416,38 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Python virtual environment
+weird_venv/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Environment variables and secrets
+.env
+.env.*
+config.ini
+secrets.json
+
+# Byte-compiled / optimized / DLL files
+*.pyd
+*.pyo
+*.pyc
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
+
+# Optional: VS Code / IDE settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace 
