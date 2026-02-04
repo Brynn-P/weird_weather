@@ -5,7 +5,7 @@ from tkinter import Tk, font
 from PIL import Image, ImageTk
 import os
 import threading
-from app_core import geocode_city, get_weather_data
+from app_core import geocode_city, get_weather_data, get_cat_fact
 from hot import hot
 from cold import cold
 from mid import mid
@@ -91,7 +91,8 @@ panel1.pack_propagate(False)
 
 panel2 = tk.Frame(left_frame, width=250, height=250, bg="darkgrey")
 panel2.pack(fill=tk.X, padx=5, pady=5)
-tk.Label(panel2, text="Panel 2 - Under Development unsure of what this will be, something fun maybe", bg="darkgrey", wraplength=230, justify="center").pack(expand=True)
+cat_fact = get_cat_fact()
+tk.Label(panel2, text=f"Random Cat Fact:\n\n{cat_fact}", bg="darkgrey", wraplength=230, justify="center").pack(expand=True)
 panel2.pack_propagate(False)
 
 # ----- Right panel with background image -----

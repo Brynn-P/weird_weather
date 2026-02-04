@@ -2,7 +2,17 @@ import requests
 import openmeteo_requests
 from openmeteo_sdk.Variable import Variable
 
-"""def get_local_news(city_name): """
+def get_cat_fact():
+    resp = requests.get(
+        "https://meowfacts.herokuapp.com/"
+    )
+    resp.raise_for_status()
+    data = resp.json()
+    results = data.get("data", [])
+    if not results:
+        raise ValueError(f"no results here, something went wrong")
+    return results[0]
+
 
 def geocode_city(city_name):
     """
