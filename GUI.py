@@ -5,7 +5,7 @@ from tkinter import Tk, font
 from PIL import Image, ImageTk
 import os
 import threading
-from app_core import geocode_city, get_weather_data, get_cat_fact
+from app_core import geocode_city, get_weather_data, get_cat_fact, get_ron 
 from hot import hot
 from cold import cold
 from mid import mid
@@ -84,11 +84,14 @@ window.option_add("*Font", default_font)
 left_frame = tk.Frame(window, width=250, bg="grey")
 left_frame.pack(side=tk.LEFT, fill=tk.Y, padx=5, pady=5)
 
+# panel_1
 panel1 = tk.Frame(left_frame, width=250, height=250, bg="lightgrey")
 panel1.pack(fill=tk.X, padx=5, pady=5)
-tk.Label(panel1, text="Panel 1 - Under Development, will be a news portal", bg="lightgrey", wraplength=230, justify="center").pack(expand=True)
+ron_fact = get_ron()
+tk.Label(panel1, text=f"Ron Swanson Quote:\n\n{ron_fact}", bg="lightgrey", wraplength=230, justify="center").pack(expand=True)
 panel1.pack_propagate(False)
 
+# panel_2
 panel2 = tk.Frame(left_frame, width=250, height=250, bg="darkgrey")
 panel2.pack(fill=tk.X, padx=5, pady=5)
 cat_fact = get_cat_fact()
@@ -111,7 +114,7 @@ bg_label.image = bg_photo
 bg_label.place(x=0, y=0, relwidth=1, relheight=1)  # fill the frame
 
 #Place Widgets on top of background
-tk.Label(right_frame, text="Enter a city name:", bg="black", fg="white").pack(pady=10)
+tk.Label(right_frame, text="Enter a city name:", bg="#FCFCE1", fg="black").pack(pady=10)
 city_entry = tk.Entry(right_frame, width=30)
 city_entry.pack()
 tk.Button(right_frame, text="Get Weather", command=run_weather).pack(pady=10)

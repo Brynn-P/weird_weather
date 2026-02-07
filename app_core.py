@@ -13,6 +13,16 @@ def get_cat_fact():
         raise ValueError(f"no results here, something went wrong")
     return results[0]
 
+def get_ron():
+    resp = requests.get(
+        "https://ron-swanson-quotes.herokuapp.com/v2/quotes"
+    )
+    resp.raise_for_status()
+    data = resp.json()
+
+    if not data:
+        raise ValueError(f"no results here, something went wrong")
+    return data[0]
 
 def geocode_city(city_name):
     """
